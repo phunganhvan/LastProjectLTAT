@@ -1,6 +1,5 @@
 {
-  "name": "audio-surveillance",
-  "proxy": "http://localhost:3000",
+  "name": "Doorbell.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
