@@ -55,7 +55,7 @@ class AudioClassifier extends Component {
 
                   if (classLabels[i] === this.tts_key && this.state.tts == true){
                     speech.speak({
-                      text: 'I heard a doorbell!',
+                      text: `I heard a ${this.tts_key}!`,
                       }).then(() => {
                           console.log("Success !")
                       }).catch(e => {
