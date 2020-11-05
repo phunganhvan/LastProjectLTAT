@@ -117,7 +117,8 @@ class AudioClassifier extends Component {
                       <h1 className="label-log">Logs</h1>                           
                       <React.Fragment>
                       <ul className="list-grp">
-                        {this.state.logs.reverse().map(listitem => (
+                        {this.state.logs.length == 0 ? <p>Looks empty. huh.</p> : 
+                          this.state.logs.reverse().map(listitem => (
                           <li key={listitem.id} className="list-group-item list-group-item-success">
                             {listitem.text + ` - ${listitem.time}`}
                           </li>
