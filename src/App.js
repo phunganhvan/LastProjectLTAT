@@ -1,5 +1,6 @@
 import React from 'react';
 import AudioClassifier from './components/AudioClassifier/AudioClassifier'
+import Footer from './components/Footer/Footer'
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
 		<div>
       <AudioClassifier />
+      <Footer />
     </div>
 	);
 }

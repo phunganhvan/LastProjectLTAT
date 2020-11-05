@@ -10,6 +10,7 @@ class AudioClassifier extends Component {
         super(props);
         this.handleChange = this.handleChange.bind(this)
         this.keycount = 1;
+        this.tts_key = "Doorbell"
         this.state = { label: 'Initializing...',
                         tts: false,
                         logs: [
@@ -56,7 +57,7 @@ class AudioClassifier extends Component {
 
                   }
 
-                  if (classLabels[i] === 'Doorbell' && this.state.tts == true){
+                  if (classLabels[i] === this.tts_key && this.state.tts == true){
                     speech.speak({
                       text: 'I heard a doorbell!',
                       }).then(() => {
