@@ -53,10 +53,6 @@ class AudioClassifier extends Component {
                 
                 if (classLabels[i] != 'Background Noise'){
 
-                  if (true) {
-
-                  }
-
                   if (classLabels[i] === this.tts_key && this.state.tts == true){
                     speech.speak({
                       text: 'I heard a doorbell!',
