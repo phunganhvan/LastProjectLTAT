@@ -10,7 +10,9 @@ class AudioClassifier extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this)
     this.keycount = 1;
-    this.tts_key = ["Nhạc Pop", "Nhạc Rock", "Nhạc EDM", "clap"];
+    //this.tts_key = ["Nhạc Pop", "Nhạc Rock", "Nhạc EDM", "clap"];  // Phân loại thể loại nhạc
+    //this.tts_key = ["Clap", "Bark (Dog Sound)", "Cat Sound", "Duck Sound", "Bird Sound"]; // Phân loại tiếng động vật
+    this.tts_key = [ "Clap", "Guitar", "Piano", "Drum", "Trumpet"] // Phân loại tiếng nhạc cụ
     this.state = {
       label: 'Initializing...',
       tts: false,
@@ -28,9 +30,10 @@ class AudioClassifier extends Component {
 
     const threshold = 0.95;
 
-    const URL = "https://teachablemachine.withgoogle.com/models/7oygXouNv/";
-    // http://teachablemachine.withgoogle.com/models/aYxJTa5Kj/
-    // https://teachablemachine.withgoogle.com/models/-znJwC6EI/
+    const URL = "https://teachablemachine.withgoogle.com/models/O9qPRONcY/";
+    // https://teachablemachine.withgoogle.com/models/7oygXouNv/   -  phân loại nhạc
+    // https://teachablemachine.withgoogle.com/models/TyoKC4XJ2/ phân loại tiếng vỗ tay, chó mèo, vịt, chim
+    // https://teachablemachine.withgoogle.com/models/O9qPRONcY/ phân loại nhạc cụ
     const checkpointURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
@@ -53,10 +56,10 @@ class AudioClassifier extends Component {
           const speech = new Speech()
 
           if (classLabels[i] !== 'Background Noise') {
-            for (let j = 0; j < 4; j++) {
+            for (let j = 0; j < this.tts_key.length; j++) {
               if (classLabels[i] === this.tts_key[j] && this.state.tts === true) {
                 speech.speak({
-                  text: `I heard a ${this.tts_key[j]} - có nghĩa là tôi đang nghe tiếng ${this.tts_key[j]}!`,
+                  text: `${this.tts_key[j]}!`,
 
                 }).then(() => {
                   console.log("Success !")
