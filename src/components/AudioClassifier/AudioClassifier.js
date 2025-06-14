@@ -10,9 +10,9 @@ class AudioClassifier extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this)
     this.keycount = 1;
-    //this.tts_key = ["Nhạc Pop", "Nhạc Rock", "Nhạc EDM", "clap"];  // Phân loại thể loại nhạc
+    this.tts_key = ["Pop music", "Rock music", "EDM music", "clap"];  // Phân loại thể loại nhạc
     //this.tts_key = ["Clap", "Bark (Dog Sound)", "Cat Sound", "Duck Sound", "Bird Sound"]; // Phân loại tiếng động vật
-    this.tts_key = [ "Clap", "Guitar", "Piano", "Drum", "Trumpet"] // Phân loại tiếng nhạc cụ
+    //this.tts_key = [ "Clap", "Guitar", "Piano", "Drum", "Trumpet"] // Phân loại tiếng nhạc cụ
     this.state = {
       label: 'Initializing...',
       tts: false,
@@ -30,10 +30,10 @@ class AudioClassifier extends Component {
 
     const threshold = 0.95;
 
-    const URL = "https://teachablemachine.withgoogle.com/models/O9qPRONcY/";
-    // https://teachablemachine.withgoogle.com/models/7oygXouNv/   -  phân loại nhạc
+    const URL = "https://teachablemachine.withgoogle.com/models/282RjfESx/";
+    // https://teachablemachine.withgoogle.com/models/282RjfESx/  -  phân loại nhạc
     // https://teachablemachine.withgoogle.com/models/TyoKC4XJ2/ phân loại tiếng vỗ tay, chó mèo, vịt, chim
-    // https://teachablemachine.withgoogle.com/models/O9qPRONcY/ phân loại nhạc cụ
+    // https://teachablemachine.withgoogle.com/models/UTZry_dIJ/ phân loại nhạc cụ
     const checkpointURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
